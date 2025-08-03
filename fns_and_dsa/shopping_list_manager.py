@@ -20,28 +20,28 @@ def main():
             item = input("Enter the item to add: ").strip()
             if item:
                 shopping_list.append(item)
-                print(f" '{item}' added to the shopping list.")
+                print(f"✅ '{item}' added to the shopping list.")
             else:
-                print(" Please enter a valid item name.")
+                print("⚠️ Please enter a valid item name.")
 
         elif choice == 2:
             item = input("Enter the item to remove: ").strip()
             if item in shopping_list:
                 shopping_list.remove(item)
-                print(f"'{item}' removed from the shopping list.")
+                print(f"❌ '{item}' removed from the shopping list.")
             else:
-                print(f"'{item}' not found in the shopping list.")
+                print(f"⚠️ '{item}' not found in the shopping list.")
 
         elif choice == 3:
             if shopping_list:
-                print("\n Your Shopping List:")
+                print("\n📝 Your Shopping List:")
                 for idx, item in enumerate(shopping_list, start=1):
                     print(f"{idx}. {item}")
             else:
-                print(" Your shopping list is currently empty.")
+                print("🛒 Your shopping list is currently empty.")
 
         elif choice == 4:
-            print(" Goodbye!")
+            print("👋 Goodbye!")
             break
 
         else:
@@ -49,3 +49,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    
