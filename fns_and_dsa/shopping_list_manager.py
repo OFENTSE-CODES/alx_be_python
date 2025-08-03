@@ -1,10 +1,10 @@
 # shopping_list_manager.py
 
 # Function to display the menu
-def display_menu():
+def display_menu(items):
     print("\nShopping List Manager")
-    print("1. Add Item")
-    print("2. Remove Item")
+    print("1. Add Item {item}")
+    print("2. Remove Item {item}")
     print("3. View List")
     print("4. Exit")
 
