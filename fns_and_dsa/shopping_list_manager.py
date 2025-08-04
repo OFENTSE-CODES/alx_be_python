@@ -1,11 +1,11 @@
-def display_menu():
+def display_menu(add_item, remove_item, view_list,):
     """
     Displays the menu options for the shopping list manager.
     """
     print("\n--- Shopping List Manager ---")
-    print("1. Add item")
-    print("2. Remove item")
-    print("3. View shopping list")
+    print(f"1. {add_item}")
+    print(f"2. {remove_item}")
+    print(f"3. {view_list}")
     print("4. Exit")
 
 def add_item(shopping_list):
@@ -33,6 +33,7 @@ def view_list(shopping_list):
         print("Your shopping list is currently empty.")
 
 def main():
+    """
     shopping_list = []
 
     while True:
