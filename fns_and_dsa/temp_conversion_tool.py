@@ -1,7 +1,12 @@
 # temp_conversion_tool.py
 
 # Define Global Conversion Factors
+# This factor is used to convert Fahrenheit to Celsius.
+# Formula: (F - 32) × (5/9)
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
+
+# This factor is used to convert Celsius to Fahrenheit.
+# Formula: (C × 9/5) + 32
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
 # Conversion function: Fahrenheit to Celsius
