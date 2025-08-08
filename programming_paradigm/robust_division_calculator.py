@@ -1,24 +1,20 @@
 def safe_divide(numerator, denominator):
     """
-    Safely divide numerator by denominator.
-    Returns a string with the result or an error message.
-
-    Expected outputs (exact text):
-    - Normal: "The result of dividing {num} by {den} is {result}"
-    - Non-numeric: "Error: Please provide numeric values."
-    - Division by zero: "Error: Division by zero is not allowed."
+    Performs safe division with error handling.
+    Returns:
+      - Result as: "The result of the division is X"
+      - Error for zero division: "Error: Cannot divide by zero."
+      - Error for invalid input: "Error: Please enter numeric values only."
     """
-    # First, convert inputs to floats and handle non-numeric values
     try:
         num = float(numerator)
         den = float(denominator)
     except ValueError:
-        return "Error: Please provide numeric values."
+        return "Error: Please enter numeric values only."
 
-    # Perform the division in its own try/except so ZeroDivisionError is caught explicitly
     try:
         result = num / den
     except ZeroDivisionError:
-        return "Error: Division by zero is not allowed."
+        return "Error: Cannot divide by zero."
 
-    return f"The result of dividing {num} by {den} is {result}"
+    return f"The result of the division is {result}"
