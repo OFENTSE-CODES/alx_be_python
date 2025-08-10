@@ -1,3 +1,5 @@
+# class_static_methods_demo.py
+
 class Calculator:
     # Class attribute
     calculation_type = "Arithmetic Operations"
@@ -11,3 +13,4 @@ class Calculator:
     def multiply(cls, a, b):
         """Print calculation type and return the product of two numbers."""
         print(f"Calculation type: {cls.calculation_type}")
+        return a * b
