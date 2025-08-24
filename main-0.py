@@ -1,9 +1,7 @@
-
 import sys
 from bank_account import BankAccount
 
 def main():
-    # Start with an example balance of 100
     account = BankAccount(100)
 
     if len(sys.argv) < 2:
@@ -11,7 +9,6 @@ def main():
         print("Commands: deposit, withdraw, display")
         sys.exit(1)
 
-    # Split command and parameters
     parts = sys.argv[1].split(':')
     command = parts[0]
     amount = float(parts[1]) if len(parts) > 1 else None
