@@ -1,6 +1,3 @@
-# temp_conversion_tool.py
-
-# Global conversion factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
@@ -15,18 +12,15 @@ def convert_to_fahrenheit(celsius):
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 
-def _parse_temperature_or_raise(text):
-    """Parse a temperature string to float or raise the required ValueError."""
-    try:
-        return float(text)
-    except Exception:
-        # EXACT message per spec
-        raise ValueError("Invalid temperature. Please enter a numeric value.")
-
-
 def main():
+    # User interaction
     temp_input = input("Enter the temperature to convert: ").strip()
-    temperature = _parse_temperature_or_raise(temp_input)
+
+    # Raise ValueError if not numeric
+    try:
+        temperature = float(temp_input)
+    except ValueError:
+        raise ValueError("Invalid temperature. Please enter a numeric value.")
 
     unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
@@ -37,13 +31,8 @@ def main():
         result = convert_to_celsius(temperature)
         print(f"{temperature}°F is {result}°C")
     else:
-        # Unit validation (not part of the ValueError check, but helpful)
         print("Invalid unit. Please enter C or F.")
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except ValueError as e:
-        # Keep CLI friendly output while still having an actual ValueError in code
-        print(e)
+    main()
